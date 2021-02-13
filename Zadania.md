@@ -1,2 +1,0 @@
-### Zadania w terminalu
-
