@@ -2,12 +2,12 @@ version: '3.4'
 
 services:
   database:
-    container_name: mysql
+    container_name: mysql_music_shop
     restart: always
     image: mysql:${MYSQL_VERSION}
     command: ["--default-authentication-plugin=mysql_native_password"]
     ports:
-      - ${MYSQL_EXPOSRED_PORT}:3306
+      - ${MYSQL_EXPOSED_PORT}:3306
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_USER: ${MYSQL_USER}
