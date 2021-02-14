@@ -14,4 +14,16 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
     volumes:
-      - ./database:/var/lib/mysql
+      - ../database:/var/lib/mysql
+
+  website:
+    container_name: music_shop_app
+    build: .
+    ports:
+      - "3000:80"
+    volumes: 
+      - .:/app
+      - /app/node_modules
+    command: npm start
+    # stdin_open: true
+    # tty: true
